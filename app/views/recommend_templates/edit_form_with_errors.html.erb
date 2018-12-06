@@ -1,0 +1,65 @@
+<!-- Validation failure messages -->
+<% if @recommend.errors.any? %>
+  <% @recommend.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit recommend #<%= @recommend.id %>
+</h1>
+
+<hr>
+
+<!-- Form recommend start -->
+<form action="/update_recommend/<%= @recommend.id %>" method="post">
+<!-- Form recommend end -->
+
+  <!-- Label and input for song_id start -->
+  <div class="form-group">
+    <label for="song_id">
+      Song
+    </label>
+
+    <!-- Input for song_id start -->
+    <input type="text" id="song_id" name="song_id" class="form-control" value="<%= @recommend.song_id %>">
+    <!-- Input for song_id end -->
+  </div>
+  <!-- Label and input for song_id end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @recommend.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for activity_id start -->
+  <div class="form-group">
+    <label for="activity_id">
+      Activity
+    </label>
+
+    <!-- Input for activity_id start -->
+    <input type="text" id="activity_id" name="activity_id" class="form-control" value="<%= @recommend.activity_id %>">
+    <!-- Input for activity_id end -->
+  </div>
+  <!-- Label and input for activity_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update recommend
+  </button>
+</form>
+
+<hr>
+
+<a href="/recommends">
+  Go back
+</a>

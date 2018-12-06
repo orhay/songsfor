@@ -1,0 +1,82 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Recommend #<%= @recommend.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/recommends" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link recommend start -->
+      <div class="col">
+        <a href="/recommends/<%= @recommend.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit recommend
+        </a>
+      </div>
+      <!-- Edit link recommend end -->
+
+      <!-- Delete link recommend start -->
+      <div class="col">
+        <a href="/delete_recommend/<%= @recommend.id %>" class="btn btn-block btn-outline-secondary">
+          Delete recommend
+        </a>
+      </div>
+      <!-- Delete link recommend end -->
+    </div>
+
+    <dl>
+      <dt>
+        Song
+      </dt>
+      <!-- Display song_id start -->
+      <dd>
+        <%= @recommend.song_id %>
+      </dd>
+      <!-- Display song_id end -->
+
+      <dt>
+        User
+      </dt>
+      <!-- Display user_id start -->
+      <dd>
+        <%= @recommend.user_id %>
+      </dd>
+      <!-- Display user_id end -->
+
+      <dt>
+        Activity
+      </dt>
+      <!-- Display activity_id start -->
+      <dd>
+        <%= @recommend.activity_id %>
+      </dd>
+      <!-- Display activity_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@recommend.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@recommend.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

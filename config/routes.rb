@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Recommend resource:
+
+  # CREATE
+  get("/recommends/new", { :controller => "recommends", :action => "new_form" })
+  post("/create_recommend", { :controller => "recommends", :action => "create_row" })
+
+  # READ
+  get("/recommends", { :controller => "recommends", :action => "index" })
+  get("/recommends/:id_to_display", { :controller => "recommends", :action => "show" })
+
+  # UPDATE
+  get("/recommends/:prefill_with_id/edit", { :controller => "recommends", :action => "edit_form" })
+  post("/update_recommend/:id_to_modify", { :controller => "recommends", :action => "update_row" })
+
+  # DELETE
+  get("/delete_recommend/:id_to_remove", { :controller => "recommends", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Activity resource:
 
   # CREATE
