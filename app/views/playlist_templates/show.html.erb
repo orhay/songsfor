@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link playlist start -->
       <div class="col">
         <% if current_user == @playlist.user %>
           <a href="/playlists/<%= @playlist.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link playlist end -->
 
-      <!-- Delete link playlist start -->
       <div class="col">
         <% if current_user == @playlist.user %>
           <a href="/delete_playlist/<%= @playlist.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,23 +26,19 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link playlist end -->
     </div>
 
     <dl>
       <dt>
         Description
       </dt>
-      <!-- Display description start -->
       <dd>
         <%= @playlist.description %>
       </dd>
-      <!-- Display description end -->
 
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @playlist.user.present? %>
           <a href="/users/<%= @playlist.user_id %>">
@@ -53,48 +46,38 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Playlist name
       </dt>
-      <!-- Display playlist_name start -->
       <dd>
         <%= @playlist.playlist_name %>
       </dd>
-      <!-- Display playlist_name end -->
 
       <dt>
         Spotify playlist
       </dt>
-      <!-- Display spotify_playlist_id start -->
       <dd>
         <%= @playlist.spotify_playlist_id %>
       </dd>
-      <!-- Display spotify_playlist_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@playlist.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@playlist.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "playlist_templates/playlist_playlists_for_activities" %>
@@ -118,4 +101,3 @@
     <%= render partial: "playlist_templates/playlist_songs" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

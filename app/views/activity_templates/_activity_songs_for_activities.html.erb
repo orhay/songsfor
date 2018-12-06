@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @activity.songs_for_activities.each do |songs_for_activity| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/songs_for_activities/<%= songs_for_activity.id %>">
           <%= songs_for_activity.song_id %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <a href="/delete_songs_for_activity_from_activity/<%= songs_for_activity.id %>">
           Delete
         </a>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="activity_songs_for_activities_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "activity_templates/activity_songs_for_activities_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

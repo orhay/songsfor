@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @playlists_song.errors.any? %>
   <% @playlists_song.errors.full_messages.each do |message| %>
     <div class="alert">
@@ -13,33 +12,23 @@
 
 <hr>
 
-<!-- Form playlists_song start -->
 <form action="/update_playlists_song/<%= @playlists_song.id %>" method="post">
-<!-- Form playlists_song end -->
 
-  <!-- Label and input for song_id start -->
   <div class="form-group">
     <label for="song_id">
       Song
     </label>
 
-    <!-- Input for song_id start -->
     <%= select_tag(:song_id, options_from_collection_for_select(Song.all, :id, :artist, @playlists_song.song_id), :class => "form-control") %>
-    <!-- Input for song_id end -->
   </div>
-  <!-- Label and input for song_id end -->
 
-  <!-- Label and input for playlist_id start -->
   <div class="form-group">
     <label for="playlist_id">
       Playlist
     </label>
 
-    <!-- Input for playlist_id start -->
     <%= select_tag(:playlist_id, options_from_collection_for_select(Playlist.all, :id, :playlist_name, @playlists_song.playlist_id), :class => "form-control") %>
-    <!-- Input for playlist_id end -->
   </div>
-  <!-- Label and input for playlist_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update playlists song

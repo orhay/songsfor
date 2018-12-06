@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link recommend start -->
       <div class="col">
         <% if current_user == @recommend.user %>
           <a href="/recommends/<%= @recommend.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link recommend end -->
 
-      <!-- Delete link recommend start -->
       <div class="col">
         <% if current_user == @recommend.user %>
           <a href="/delete_recommend/<%= @recommend.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,14 +26,12 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link recommend end -->
     </div>
 
     <dl>
       <dt>
         Song
       </dt>
-      <!-- Display song_id start -->
       <dd>
         <% if @recommend.song.present? %>
           <a href="/songs/<%= @recommend.song_id %>">
@@ -44,12 +39,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display song_id end -->
 
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @recommend.user.present? %>
           <a href="/users/<%= @recommend.user_id %>">
@@ -57,12 +50,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Activity
       </dt>
-      <!-- Display activity_id start -->
       <dd>
         <% if @recommend.activity.present? %>
           <a href="/activities/<%= @recommend.activity_id %>">
@@ -70,28 +61,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display activity_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@recommend.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@recommend.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

@@ -4,21 +4,15 @@
 
 <hr>
 
-<!-- Form activity start -->
 <form action="/update_activity/<%= @activity.id %>" method="post">
-<!-- Form activity end -->
 
-  <!-- Label and input for activity_name start -->
   <div class="form-group">
     <label for="activity_name">
       Activity name
     </label>
 
-    <!-- Input for activity_name start -->
     <input type="text" id="activity_name" name="activity_name" class="form-control" value="<%= @activity.activity_name %>">
-    <!-- Input for activity_name end -->
   </div>
-  <!-- Label and input for activity_name end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update activity

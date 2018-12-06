@@ -4,48 +4,32 @@
 
 <hr>
 
-<!-- Form playlist start -->
 <form action="/update_playlist/<%= @playlist.id %>" method="post">
-<!-- Form playlist end -->
 
-  <!-- Label and input for description start -->
   <div class="form-group">
     <label for="description">
       Description
     </label>
 
-    <!-- Input for description start -->
     <textarea id="description" name="description" class="form-control" rows="3"><%= @playlist.description %></textarea>
-    <!-- Input for description end -->
   </div>
-  <!-- Label and input for description end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for playlist_name start -->
   <div class="form-group">
     <label for="playlist_name">
       Playlist name
     </label>
 
-    <!-- Input for playlist_name start -->
     <input type="text" id="playlist_name" name="playlist_name" class="form-control" value="<%= @playlist.playlist_name %>">
-    <!-- Input for playlist_name end -->
   </div>
-  <!-- Label and input for playlist_name end -->
 
-  <!-- Label and input for spotify_playlist_id start -->
   <div class="form-group">
     <label for="spotify_playlist_id">
       Spotify playlist
     </label>
 
-    <!-- Input for spotify_playlist_id start -->
     <input type="text" id="spotify_playlist_id" name="spotify_playlist_id" class="form-control" value="<%= @playlist.spotify_playlist_id %>">
-    <!-- Input for spotify_playlist_id end -->
   </div>
-  <!-- Label and input for spotify_playlist_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update playlist

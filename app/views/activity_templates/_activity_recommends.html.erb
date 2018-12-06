@@ -10,28 +10,22 @@
   <ul class="list-group list-group-flush">
     <% @activity.recommends.each do |recommend| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/recommends/<%= recommend.id %>">
           <%= recommend.song_id %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <%if current_user == recommend.user %>
           <a href="/delete_recommend_from_activity/<%= recommend.id %>">
             Delete
           </a>
         <% end %>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="activity_recommends_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "activity_templates/activity_recommends_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

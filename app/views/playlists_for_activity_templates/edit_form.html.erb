@@ -4,33 +4,23 @@
 
 <hr>
 
-<!-- Form playlists_for_activity start -->
 <form action="/update_playlists_for_activity/<%= @playlists_for_activity.id %>" method="post">
-<!-- Form playlists_for_activity end -->
 
-  <!-- Label and input for activity_id start -->
   <div class="form-group">
     <label for="activity_id">
       Activity
     </label>
 
-    <!-- Input for activity_id start -->
     <%= select_tag(:activity_id, options_from_collection_for_select(Activity.all, :id, :activity_name, @playlists_for_activity.activity_id), :class => "form-control") %>
-    <!-- Input for activity_id end -->
   </div>
-  <!-- Label and input for activity_id end -->
 
-  <!-- Label and input for playlist_id start -->
   <div class="form-group">
     <label for="playlist_id">
       Playlist
     </label>
 
-    <!-- Input for playlist_id start -->
     <%= select_tag(:playlist_id, options_from_collection_for_select(Playlist.all, :id, :playlist_name, @playlists_for_activity.playlist_id), :class => "form-control") %>
-    <!-- Input for playlist_id end -->
   </div>
-  <!-- Label and input for playlist_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update playlists for activity

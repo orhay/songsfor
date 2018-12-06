@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @song.present? %>
   <% if @song.errors.any? %>
     <% @song.errors.full_messages.each do |message| %>
@@ -16,33 +15,23 @@
 
 <hr>
 
-<!-- Form song start -->
 <form action="/create_song" method="post">
-<!-- Form song end -->
 
-  <!-- Label and input for artist start -->
   <div class="form-group">
     <label for="artist">
       Artist
     </label>
 
-    <!-- Input for artist start -->
     <textarea id="artist" name="artist" class="form-control" rows="3"><%= @song.artist %></textarea>
-    <!-- Input for artist end -->
   </div>
-  <!-- Label and input for artist end -->
 
-  <!-- Label and input for song_name start -->
   <div class="form-group">
     <label for="song_name">
       Song name
     </label>
 
-    <!-- Input for song_name start -->
     <input type="text" id="song_name" name="song_name" class="form-control" value="<%= @song.song_name %>">
-    <!-- Input for song_name end -->
   </div>
-  <!-- Label and input for song_name end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create song

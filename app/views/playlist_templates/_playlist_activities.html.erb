@@ -6,11 +6,9 @@
   <ul class="list-group list-group-flush">
     <% @playlist.activities.each do |activity| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/activities/<%= activity.id %>">
           <%= activity.activity_name %>
         </a>
-        <!-- Show link end -->
 
       </li>
     <% end %>

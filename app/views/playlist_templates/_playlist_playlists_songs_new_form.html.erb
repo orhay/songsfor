@@ -1,23 +1,14 @@
-<!-- Form playlists_song start -->
 <form action="/create_playlists_song_from_playlist" method="post">
-<!-- Form playlists_song end -->
 
-  <!-- Label and input for song_id start -->
   <div class="form-group">
     <label for="song_id">
       Song
     </label>
 
-    <!-- Input for song_id start -->
     <%= select_tag(:song_id, options_from_collection_for_select(Song.all, :id, :artist, @playlists_song.song_id), :class => "form-control") %>
-    <!-- Input for song_id end -->
   </div>
-  <!-- Label and input for song_id end -->
 
-  <!-- Label and input for playlist_id start -->
-  <!-- Input for playlist_id start -->
   <input type="hidden" name="playlist_id" value="<%= @playlist.id %>">
-  <!-- Input for playlist_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create playlists song

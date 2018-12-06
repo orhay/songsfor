@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link playlists_song start -->
       <div class="col">
         <a href="/playlists_songs/<%= @playlists_song.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit playlists song
         </a>
       </div>
-      <!-- Edit link playlists_song end -->
 
-      <!-- Delete link playlists_song start -->
       <div class="col">
         <a href="/delete_playlists_song/<%= @playlists_song.id %>" class="btn btn-block btn-outline-secondary">
           Delete playlists song
         </a>
       </div>
-      <!-- Delete link playlists_song end -->
     </div>
 
     <dl>
       <dt>
         Song
       </dt>
-      <!-- Display song_id start -->
       <dd>
         <% if @playlists_song.song.present? %>
           <a href="/songs/<%= @playlists_song.song_id %>">
@@ -40,12 +35,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display song_id end -->
 
       <dt>
         Playlist
       </dt>
-      <!-- Display playlist_id start -->
       <dd>
         <% if @playlists_song.playlist.present? %>
           <a href="/playlists/<%= @playlists_song.playlist_id %>">
@@ -53,28 +46,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display playlist_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@playlists_song.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@playlists_song.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->
