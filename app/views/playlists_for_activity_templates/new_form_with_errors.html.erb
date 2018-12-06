@@ -1,0 +1,56 @@
+<!-- Validation failure messages -->
+<% if @playlists_for_activity.present? %>
+  <% if @playlists_for_activity.errors.any? %>
+    <% @playlists_for_activity.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new playlists for activity
+</h1>
+
+
+<hr>
+
+<!-- Form playlists_for_activity start -->
+<form action="/create_playlists_for_activity" method="post">
+<!-- Form playlists_for_activity end -->
+
+  <!-- Label and input for activity_id start -->
+  <div class="form-group">
+    <label for="activity_id">
+      Activity
+    </label>
+
+    <!-- Input for activity_id start -->
+    <input type="text" id="activity_id" name="activity_id" class="form-control" value="<%= @playlists_for_activity.activity_id %>">
+    <!-- Input for activity_id end -->
+  </div>
+  <!-- Label and input for activity_id end -->
+
+  <!-- Label and input for playlist_id start -->
+  <div class="form-group">
+    <label for="playlist_id">
+      Playlist
+    </label>
+
+    <!-- Input for playlist_id start -->
+    <input type="text" id="playlist_id" name="playlist_id" class="form-control" value="<%= @playlists_for_activity.playlist_id %>">
+    <!-- Input for playlist_id end -->
+  </div>
+  <!-- Label and input for playlist_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create playlists for activity
+  </button>
+</form>
+
+<hr>
+
+<a href="/playlists_for_activities">
+  Go back
+</a>
