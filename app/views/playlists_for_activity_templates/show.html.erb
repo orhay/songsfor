@@ -34,7 +34,11 @@
       </dt>
       <!-- Display activity_id start -->
       <dd>
-        <%= @playlists_for_activity.activity_id %>
+        <% if @playlists_for_activity.activity.present? %>
+          <a href="/activities/<%= @playlists_for_activity.activity_id %>">
+            <%= @playlists_for_activity.activity.activity_name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display activity_id end -->
 
@@ -43,7 +47,11 @@
       </dt>
       <!-- Display playlist_id start -->
       <dd>
-        <%= @playlists_for_activity.playlist_id %>
+        <% if @playlists_for_activity.playlist.present? %>
+          <a href="/playlists/<%= @playlists_for_activity.playlist_id %>">
+            <%= @playlists_for_activity.playlist.playlist_name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display playlist_id end -->
 

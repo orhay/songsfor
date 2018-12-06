@@ -58,13 +58,21 @@
 
         <!-- Display songs_for_activity.song_id start -->
         <td>
-          <%= songs_for_activity.song.artist %>
+          <% if songs_for_activity.song.present? %>
+            <a href="/songs/<%= songs_for_activity.song.id %>">
+              <%= songs_for_activity.song.artist %>
+            </a>
+          <% end %>
         </td>
         <!-- Display songs_for_activity.song_id end -->
 
         <!-- Display songs_for_activity.activity_id start -->
         <td>
-          <%= songs_for_activity.activity.activity_name %>
+          <% if songs_for_activity.activity.present? %>
+            <a href="/activities/<%= songs_for_activity.activity.id %>">
+              <%= songs_for_activity.activity.activity_name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display songs_for_activity.activity_id end -->
 

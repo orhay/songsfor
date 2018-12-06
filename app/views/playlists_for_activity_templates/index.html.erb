@@ -58,13 +58,21 @@
 
         <!-- Display playlists_for_activity.activity_id start -->
         <td>
-          <%= playlists_for_activity.activity.activity_name %>
+          <% if playlists_for_activity.activity.present? %>
+            <a href="/activities/<%= playlists_for_activity.activity.id %>">
+              <%= playlists_for_activity.activity.activity_name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display playlists_for_activity.activity_id end -->
 
         <!-- Display playlists_for_activity.playlist_id start -->
         <td>
-          <%= playlists_for_activity.playlist.playlist_name %>
+          <% if playlists_for_activity.playlist.present? %>
+            <a href="/playlists/<%= playlists_for_activity.playlist.id %>">
+              <%= playlists_for_activity.playlist.playlist_name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display playlists_for_activity.playlist_id end -->
 

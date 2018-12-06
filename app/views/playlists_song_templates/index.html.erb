@@ -58,13 +58,21 @@
 
         <!-- Display playlists_song.song_id start -->
         <td>
-          <%= playlists_song.song.artist %>
+          <% if playlists_song.song.present? %>
+            <a href="/songs/<%= playlists_song.song.id %>">
+              <%= playlists_song.song.artist %>
+            </a>
+          <% end %>
         </td>
         <!-- Display playlists_song.song_id end -->
 
         <!-- Display playlists_song.playlist_id start -->
         <td>
-          <%= playlists_song.playlist.playlist_name %>
+          <% if playlists_song.playlist.present? %>
+            <a href="/playlists/<%= playlists_song.playlist.id %>">
+              <%= playlists_song.playlist.playlist_name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display playlists_song.playlist_id end -->
 

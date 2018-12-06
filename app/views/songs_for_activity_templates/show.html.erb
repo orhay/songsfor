@@ -34,7 +34,11 @@
       </dt>
       <!-- Display song_id start -->
       <dd>
-        <%= @songs_for_activity.song_id %>
+        <% if @songs_for_activity.song.present? %>
+          <a href="/songs/<%= @songs_for_activity.song_id %>">
+            <%= @songs_for_activity.song.artist %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display song_id end -->
 
@@ -43,7 +47,11 @@
       </dt>
       <!-- Display activity_id start -->
       <dd>
-        <%= @songs_for_activity.activity_id %>
+        <% if @songs_for_activity.activity.present? %>
+          <a href="/activities/<%= @songs_for_activity.activity_id %>">
+            <%= @songs_for_activity.activity.activity_name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display activity_id end -->
 

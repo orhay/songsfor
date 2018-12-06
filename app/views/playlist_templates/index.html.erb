@@ -72,7 +72,11 @@
 
         <!-- Display playlist.user_id start -->
         <td>
-          <%= playlist.user.username %>
+          <% if playlist.user.present? %>
+            <a href="/users/<%= playlist.user.id %>">
+              <%= playlist.user.username %>
+            </a>
+          <% end %>
         </td>
         <!-- Display playlist.user_id end -->
 

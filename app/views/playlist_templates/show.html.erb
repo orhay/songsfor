@@ -47,7 +47,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @playlist.user_id %>
+        <% if @playlist.user.present? %>
+          <a href="/users/<%= @playlist.user_id %>">
+            <%= @playlist.user.username %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 

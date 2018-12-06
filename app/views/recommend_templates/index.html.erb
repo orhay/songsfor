@@ -62,19 +62,31 @@
 
         <!-- Display recommend.song_id start -->
         <td>
-          <%= recommend.song.artist %>
+          <% if recommend.song.present? %>
+            <a href="/songs/<%= recommend.song.id %>">
+              <%= recommend.song.artist %>
+            </a>
+          <% end %>
         </td>
         <!-- Display recommend.song_id end -->
 
         <!-- Display recommend.user_id start -->
         <td>
-          <%= recommend.user.username %>
+          <% if recommend.user.present? %>
+            <a href="/users/<%= recommend.user.id %>">
+              <%= recommend.user.username %>
+            </a>
+          <% end %>
         </td>
         <!-- Display recommend.user_id end -->
 
         <!-- Display recommend.activity_id start -->
         <td>
-          <%= recommend.activity.activity_name %>
+          <% if recommend.activity.present? %>
+            <a href="/activities/<%= recommend.activity.id %>">
+              <%= recommend.activity.activity_name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display recommend.activity_id end -->
 
