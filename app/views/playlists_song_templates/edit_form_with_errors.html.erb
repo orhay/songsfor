@@ -1,0 +1,53 @@
+<!-- Validation failure messages -->
+<% if @playlists_song.errors.any? %>
+  <% @playlists_song.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit playlists song #<%= @playlists_song.id %>
+</h1>
+
+<hr>
+
+<!-- Form playlists_song start -->
+<form action="/update_playlists_song/<%= @playlists_song.id %>" method="post">
+<!-- Form playlists_song end -->
+
+  <!-- Label and input for song_id start -->
+  <div class="form-group">
+    <label for="song_id">
+      Song
+    </label>
+
+    <!-- Input for song_id start -->
+    <input type="text" id="song_id" name="song_id" class="form-control" value="<%= @playlists_song.song_id %>">
+    <!-- Input for song_id end -->
+  </div>
+  <!-- Label and input for song_id end -->
+
+  <!-- Label and input for playlist_id start -->
+  <div class="form-group">
+    <label for="playlist_id">
+      Playlist
+    </label>
+
+    <!-- Input for playlist_id start -->
+    <input type="text" id="playlist_id" name="playlist_id" class="form-control" value="<%= @playlists_song.playlist_id %>">
+    <!-- Input for playlist_id end -->
+  </div>
+  <!-- Label and input for playlist_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update playlists song
+  </button>
+</form>
+
+<hr>
+
+<a href="/playlists_songs">
+  Go back
+</a>

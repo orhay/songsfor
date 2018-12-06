@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Playlists song resource:
+
+  # CREATE
+  get("/playlists_songs/new", { :controller => "playlists_songs", :action => "new_form" })
+  post("/create_playlists_song", { :controller => "playlists_songs", :action => "create_row" })
+
+  # READ
+  get("/playlists_songs", { :controller => "playlists_songs", :action => "index" })
+  get("/playlists_songs/:id_to_display", { :controller => "playlists_songs", :action => "show" })
+
+  # UPDATE
+  get("/playlists_songs/:prefill_with_id/edit", { :controller => "playlists_songs", :action => "edit_form" })
+  post("/update_playlists_song/:id_to_modify", { :controller => "playlists_songs", :action => "update_row" })
+
+  # DELETE
+  get("/delete_playlists_song/:id_to_remove", { :controller => "playlists_songs", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Playlists for activity resource:
 
   # CREATE

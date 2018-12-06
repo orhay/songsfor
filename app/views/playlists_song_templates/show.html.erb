@@ -1,0 +1,73 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Playlists song #<%= @playlists_song.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/playlists_songs" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link playlists_song start -->
+      <div class="col">
+        <a href="/playlists_songs/<%= @playlists_song.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit playlists song
+        </a>
+      </div>
+      <!-- Edit link playlists_song end -->
+
+      <!-- Delete link playlists_song start -->
+      <div class="col">
+        <a href="/delete_playlists_song/<%= @playlists_song.id %>" class="btn btn-block btn-outline-secondary">
+          Delete playlists song
+        </a>
+      </div>
+      <!-- Delete link playlists_song end -->
+    </div>
+
+    <dl>
+      <dt>
+        Song
+      </dt>
+      <!-- Display song_id start -->
+      <dd>
+        <%= @playlists_song.song_id %>
+      </dd>
+      <!-- Display song_id end -->
+
+      <dt>
+        Playlist
+      </dt>
+      <!-- Display playlist_id start -->
+      <dd>
+        <%= @playlists_song.playlist_id %>
+      </dd>
+      <!-- Display playlist_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@playlists_song.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@playlists_song.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
