@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Songs for activity resource:
+
+  # CREATE
+  get("/songs_for_activities/new", { :controller => "songs_for_activities", :action => "new_form" })
+  post("/create_songs_for_activity", { :controller => "songs_for_activities", :action => "create_row" })
+
+  # READ
+  get("/songs_for_activities", { :controller => "songs_for_activities", :action => "index" })
+  get("/songs_for_activities/:id_to_display", { :controller => "songs_for_activities", :action => "show" })
+
+  # UPDATE
+  get("/songs_for_activities/:prefill_with_id/edit", { :controller => "songs_for_activities", :action => "edit_form" })
+  post("/update_songs_for_activity/:id_to_modify", { :controller => "songs_for_activities", :action => "update_row" })
+
+  # DELETE
+  get("/delete_songs_for_activity/:id_to_remove", { :controller => "songs_for_activities", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Recommend resource:
 
   # CREATE

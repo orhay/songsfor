@@ -1,0 +1,92 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All songs for activities
+    </h1>
+
+    <a href="/songs_for_activities/new" class="btn btn-block btn-outline-secondary">
+      Add a new songs for activity
+    </a>
+  </div>
+</div>
+
+<!-- Ransack Code start -->
+
+<!-- Ransack Code end -->
+
+<!-- Location Map Code start -->
+
+<!-- Location Map Code end -->
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Song
+        </th>
+
+        <th>
+          Activity
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @songs_for_activities.each do |songs_for_activity| %>
+      <tr>
+        <!-- Display songs_for_activity.id start -->
+        <td>
+          <%= songs_for_activity.id %>
+        </td>
+        <!-- Display songs_for_activity.id end -->
+
+        <!-- Display songs_for_activity.song_id start -->
+        <td>
+          <%= songs_for_activity.song_id %>
+        </td>
+        <!-- Display songs_for_activity.song_id end -->
+
+        <!-- Display songs_for_activity.activity_id start -->
+        <td>
+          <%= songs_for_activity.activity_id %>
+        </td>
+        <!-- Display songs_for_activity.activity_id end -->
+
+        <!-- Display songs_for_activity.created_at start -->
+        <td>
+          <%= time_ago_in_words(songs_for_activity.created_at) %> ago
+        </td>
+        <!-- Display songs_for_activity.created_at end -->
+
+        <!-- Display songs_for_activity.updated_at start -->
+        <td>
+          <%= time_ago_in_words(songs_for_activity.updated_at) %> ago
+        </td>
+        <!-- Display songs_for_activity.updated_at end -->
+
+        <td>
+          <a href="/songs_for_activities/<%= songs_for_activity.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

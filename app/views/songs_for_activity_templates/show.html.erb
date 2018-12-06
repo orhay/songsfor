@@ -1,0 +1,73 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Songs for activity #<%= @songs_for_activity.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/songs_for_activities" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link songs_for_activity start -->
+      <div class="col">
+        <a href="/songs_for_activities/<%= @songs_for_activity.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit songs for activity
+        </a>
+      </div>
+      <!-- Edit link songs_for_activity end -->
+
+      <!-- Delete link songs_for_activity start -->
+      <div class="col">
+        <a href="/delete_songs_for_activity/<%= @songs_for_activity.id %>" class="btn btn-block btn-outline-secondary">
+          Delete songs for activity
+        </a>
+      </div>
+      <!-- Delete link songs_for_activity end -->
+    </div>
+
+    <dl>
+      <dt>
+        Song
+      </dt>
+      <!-- Display song_id start -->
+      <dd>
+        <%= @songs_for_activity.song_id %>
+      </dd>
+      <!-- Display song_id end -->
+
+      <dt>
+        Activity
+      </dt>
+      <!-- Display activity_id start -->
+      <dd>
+        <%= @songs_for_activity.activity_id %>
+      </dd>
+      <!-- Display activity_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@songs_for_activity.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@songs_for_activity.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

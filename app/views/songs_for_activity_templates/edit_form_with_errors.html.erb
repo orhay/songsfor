@@ -1,0 +1,53 @@
+<!-- Validation failure messages -->
+<% if @songs_for_activity.errors.any? %>
+  <% @songs_for_activity.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit songs for activity #<%= @songs_for_activity.id %>
+</h1>
+
+<hr>
+
+<!-- Form songs_for_activity start -->
+<form action="/update_songs_for_activity/<%= @songs_for_activity.id %>" method="post">
+<!-- Form songs_for_activity end -->
+
+  <!-- Label and input for song_id start -->
+  <div class="form-group">
+    <label for="song_id">
+      Song
+    </label>
+
+    <!-- Input for song_id start -->
+    <input type="text" id="song_id" name="song_id" class="form-control" value="<%= @songs_for_activity.song_id %>">
+    <!-- Input for song_id end -->
+  </div>
+  <!-- Label and input for song_id end -->
+
+  <!-- Label and input for activity_id start -->
+  <div class="form-group">
+    <label for="activity_id">
+      Activity
+    </label>
+
+    <!-- Input for activity_id start -->
+    <input type="text" id="activity_id" name="activity_id" class="form-control" value="<%= @songs_for_activity.activity_id %>">
+    <!-- Input for activity_id end -->
+  </div>
+  <!-- Label and input for activity_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update songs for activity
+  </button>
+</form>
+
+<hr>
+
+<a href="/songs_for_activities">
+  Go back
+</a>

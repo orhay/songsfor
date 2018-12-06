@@ -1,0 +1,45 @@
+<h1>
+  Add a new songs for activity
+</h1>
+
+
+<hr>
+
+<!-- Form songs_for_activity start -->
+<form action="/create_songs_for_activity" method="post">
+<!-- Form songs_for_activity end -->
+
+  <!-- Label and input for song_id start -->
+  <div class="form-group">
+    <label for="song_id">
+      Song
+    </label>
+
+    <!-- Input for song_id start -->
+    <input type="text" id="song_id" name="song_id" class="form-control">
+    <!-- Input for song_id end -->
+  </div>
+  <!-- Label and input for song_id end -->
+
+  <!-- Label and input for activity_id start -->
+  <div class="form-group">
+    <label for="activity_id">
+      Activity
+    </label>
+
+    <!-- Input for activity_id start -->
+    <input type="text" id="activity_id" name="activity_id" class="form-control">
+    <!-- Input for activity_id end -->
+  </div>
+  <!-- Label and input for activity_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create songs for activity
+  </button>
+</form>
+
+<hr>
+
+<a href="/songs_for_activities">
+  Go back
+</a>
