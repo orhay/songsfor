@@ -24,7 +24,7 @@
     </label>
 
     <!-- Input for song_id start -->
-    <input type="text" id="song_id" name="song_id" class="form-control" value="<%= @songs_for_activity.song_id %>">
+    <%= select_tag(:song_id, options_from_collection_for_select(Song.all, :id, :artist, @songs_for_activity.song_id), :class => "form-control") %>
     <!-- Input for song_id end -->
   </div>
   <!-- Label and input for song_id end -->
