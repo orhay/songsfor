@@ -14,6 +14,8 @@ RSpec.describe Activity, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_many(:playlists) }
+
     end
 
     describe "Validations" do
