@@ -28,7 +28,7 @@
     </label>
 
     <!-- Input for playlist_id start -->
-    <input type="text" id="playlist_id" name="playlist_id" class="form-control">
+    <%= select_tag(:playlist_id, options_from_collection_for_select(Playlist.all, :id, :playlist_name, @playlists_for_activity.playlist_id), :class => "form-control") %>
     <!-- Input for playlist_id end -->
   </div>
   <!-- Label and input for playlist_id end -->
