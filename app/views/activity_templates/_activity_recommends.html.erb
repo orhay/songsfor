@@ -17,9 +17,11 @@
         <!-- Show link end -->
 
         <!-- Delete link start -->
-        <a href="/delete_recommend_from_activity/<%= recommend.id %>">
-          Delete
-        </a>
+        <%if current_user == recommend.user %>
+          <a href="/delete_recommend_from_activity/<%= recommend.id %>">
+            Delete
+          </a>
+        <% end %>
         <!-- Delete link end -->
 
       </li>

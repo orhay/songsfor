@@ -13,17 +13,21 @@
 
       <!-- Edit link recommend start -->
       <div class="col">
-        <a href="/recommends/<%= @recommend.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit recommend
-        </a>
+        <% if current_user == @recommend.user %>
+          <a href="/recommends/<%= @recommend.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit recommend
+          </a>
+        <% end %>
       </div>
       <!-- Edit link recommend end -->
 
       <!-- Delete link recommend start -->
       <div class="col">
-        <a href="/delete_recommend/<%= @recommend.id %>" class="btn btn-block btn-outline-secondary">
-          Delete recommend
-        </a>
+        <% if current_user == @recommend.user %>
+          <a href="/delete_recommend/<%= @recommend.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete recommend
+          </a>
+        <% end %>
       </div>
       <!-- Delete link recommend end -->
     </div>
