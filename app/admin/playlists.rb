@@ -1,4 +1,6 @@
 ActiveAdmin.register Playlist do
+
+ permit_params :description, :user_id, :playlist_name, :spotify_playlist_id
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
