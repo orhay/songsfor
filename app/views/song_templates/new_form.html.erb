@@ -1,0 +1,45 @@
+<h1>
+  Add a new song
+</h1>
+
+
+<hr>
+
+<!-- Form song start -->
+<form action="/create_song" method="post">
+<!-- Form song end -->
+
+  <!-- Label and input for artist start -->
+  <div class="form-group">
+    <label for="artist">
+      Artist
+    </label>
+
+    <!-- Input for artist start -->
+    <textarea id="artist" name="artist" class="form-control" rows="3"></textarea>
+    <!-- Input for artist end -->
+  </div>
+  <!-- Label and input for artist end -->
+
+  <!-- Label and input for song_name start -->
+  <div class="form-group">
+    <label for="song_name">
+      Song name
+    </label>
+
+    <!-- Input for song_name start -->
+    <input type="text" id="song_name" name="song_name" class="form-control">
+    <!-- Input for song_name end -->
+  </div>
+  <!-- Label and input for song_name end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create song
+  </button>
+</form>
+
+<hr>
+
+<a href="/songs">
+  Go back
+</a>
