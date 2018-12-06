@@ -75,7 +75,7 @@ class RecommendsController < ApplicationController
     @recommend = Recommend.find(params.fetch("id_to_modify"))
 
     @recommend.song_id = params.fetch("song_id")
-    @recommend.user_id = params.fetch("user_id")
+    
     @recommend.activity_id = params.fetch("activity_id")
 
     if @recommend.valid?
