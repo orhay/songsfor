@@ -33,6 +33,38 @@ class RecommendsController < ApplicationController
     end
   end
 
+  def create_row_from_song
+    @recommend = Recommend.new
+
+    @recommend.song_id = params.fetch("song_id")
+    @recommend.user_id = params.fetch("user_id")
+    @recommend.activity_id = params.fetch("activity_id")
+
+    if @recommend.valid?
+      @recommend.save
+
+      redirect_to("/songs/#{@recommend.song_id}", notice: "Recommend created successfully.")
+    else
+      render("recommend_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_activity
+    @recommend = Recommend.new
+
+    @recommend.song_id = params.fetch("song_id")
+    @recommend.user_id = params.fetch("user_id")
+    @recommend.activity_id = params.fetch("activity_id")
+
+    if @recommend.valid?
+      @recommend.save
+
+      redirect_to("/activities/#{@recommend.activity_id}", notice: "Recommend created successfully.")
+    else
+      render("recommend_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @recommend = Recommend.find(params.fetch("prefill_with_id"))
 

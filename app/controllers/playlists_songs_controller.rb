@@ -32,6 +32,36 @@ class PlaylistsSongsController < ApplicationController
     end
   end
 
+  def create_row_from_playlist
+    @playlists_song = PlaylistsSong.new
+
+    @playlists_song.song_id = params.fetch("song_id")
+    @playlists_song.playlist_id = params.fetch("playlist_id")
+
+    if @playlists_song.valid?
+      @playlists_song.save
+
+      redirect_to("/playlists/#{@playlists_song.playlist_id}", notice: "PlaylistsSong created successfully.")
+    else
+      render("playlists_song_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_song
+    @playlists_song = PlaylistsSong.new
+
+    @playlists_song.song_id = params.fetch("song_id")
+    @playlists_song.playlist_id = params.fetch("playlist_id")
+
+    if @playlists_song.valid?
+      @playlists_song.save
+
+      redirect_to("/songs/#{@playlists_song.song_id}", notice: "PlaylistsSong created successfully.")
+    else
+      render("playlists_song_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @playlists_song = PlaylistsSong.find(params.fetch("prefill_with_id"))
 

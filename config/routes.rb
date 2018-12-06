@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   # CREATE
   get("/playlists_songs/new", { :controller => "playlists_songs", :action => "new_form" })
   post("/create_playlists_song", { :controller => "playlists_songs", :action => "create_row" })
+  post("/create_playlists_song_from_song", { :controller => "playlists_songs", :action => "create_row_from_song" })
+  post("/create_playlists_song_from_playlist", { :controller => "playlists_songs", :action => "create_row_from_playlist" })
 
   # READ
   get("/playlists_songs", { :controller => "playlists_songs", :action => "index" })
@@ -28,6 +30,8 @@ Rails.application.routes.draw do
   # CREATE
   get("/playlists_for_activities/new", { :controller => "playlists_for_activities", :action => "new_form" })
   post("/create_playlists_for_activity", { :controller => "playlists_for_activities", :action => "create_row" })
+  post("/create_playlists_for_activity_from_activity", { :controller => "playlists_for_activities", :action => "create_row_from_activity" })
+  post("/create_playlists_for_activity_from_playlist", { :controller => "playlists_for_activities", :action => "create_row_from_playlist" })
 
   # READ
   get("/playlists_for_activities", { :controller => "playlists_for_activities", :action => "index" })
@@ -49,6 +53,8 @@ Rails.application.routes.draw do
   # CREATE
   get("/songs_for_activities/new", { :controller => "songs_for_activities", :action => "new_form" })
   post("/create_songs_for_activity", { :controller => "songs_for_activities", :action => "create_row" })
+  post("/create_songs_for_activity_from_activity", { :controller => "songs_for_activities", :action => "create_row_from_activity" })
+  post("/create_songs_for_activity_from_song", { :controller => "songs_for_activities", :action => "create_row_from_song" })
 
   # READ
   get("/songs_for_activities", { :controller => "songs_for_activities", :action => "index" })
@@ -70,6 +76,8 @@ Rails.application.routes.draw do
   # CREATE
   get("/recommends/new", { :controller => "recommends", :action => "new_form" })
   post("/create_recommend", { :controller => "recommends", :action => "create_row" })
+  post("/create_recommend_from_activity", { :controller => "recommends", :action => "create_row_from_activity" })
+  post("/create_recommend_from_song", { :controller => "recommends", :action => "create_row_from_song" })
 
   # READ
   get("/recommends", { :controller => "recommends", :action => "index" })

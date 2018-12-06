@@ -1,0 +1,25 @@
+<!-- Form playlists_song start -->
+<form action="/create_playlists_song_from_song" method="post">
+<!-- Form playlists_song end -->
+
+  <!-- Label and input for song_id start -->
+  <!-- Input for song_id start -->
+  <input type="hidden" name="song_id" value="<%= @song.id %>">
+  <!-- Input for song_id end -->
+
+  <!-- Label and input for playlist_id start -->
+  <div class="form-group">
+    <label for="playlist_id">
+      Playlist
+    </label>
+
+    <!-- Input for playlist_id start -->
+    <input type="text" id="playlist_id" name="playlist_id" class="form-control" value="<%= @playlists_song.playlist_id %>">
+    <!-- Input for playlist_id end -->
+  </div>
+  <!-- Label and input for playlist_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create playlists song
+  </button>
+</form>

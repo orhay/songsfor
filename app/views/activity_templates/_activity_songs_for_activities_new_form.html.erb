@@ -1,0 +1,25 @@
+<!-- Form songs_for_activity start -->
+<form action="/create_songs_for_activity_from_activity" method="post">
+<!-- Form songs_for_activity end -->
+
+  <!-- Label and input for song_id start -->
+  <div class="form-group">
+    <label for="song_id">
+      Song
+    </label>
+
+    <!-- Input for song_id start -->
+    <input type="text" id="song_id" name="song_id" class="form-control" value="<%= @songs_for_activity.song_id %>">
+    <!-- Input for song_id end -->
+  </div>
+  <!-- Label and input for song_id end -->
+
+  <!-- Label and input for activity_id start -->
+  <!-- Input for activity_id start -->
+  <input type="hidden" name="activity_id" value="<%= @activity.id %>">
+  <!-- Input for activity_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create songs for activity
+  </button>
+</form>

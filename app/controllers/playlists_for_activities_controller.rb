@@ -32,6 +32,36 @@ class PlaylistsForActivitiesController < ApplicationController
     end
   end
 
+  def create_row_from_playlist
+    @playlists_for_activity = PlaylistsForActivity.new
+
+    @playlists_for_activity.activity_id = params.fetch("activity_id")
+    @playlists_for_activity.playlist_id = params.fetch("playlist_id")
+
+    if @playlists_for_activity.valid?
+      @playlists_for_activity.save
+
+      redirect_to("/playlists/#{@playlists_for_activity.playlist_id}", notice: "PlaylistsForActivity created successfully.")
+    else
+      render("playlists_for_activity_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_activity
+    @playlists_for_activity = PlaylistsForActivity.new
+
+    @playlists_for_activity.activity_id = params.fetch("activity_id")
+    @playlists_for_activity.playlist_id = params.fetch("playlist_id")
+
+    if @playlists_for_activity.valid?
+      @playlists_for_activity.save
+
+      redirect_to("/activities/#{@playlists_for_activity.activity_id}", notice: "PlaylistsForActivity created successfully.")
+    else
+      render("playlists_for_activity_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @playlists_for_activity = PlaylistsForActivity.find(params.fetch("prefill_with_id"))
 

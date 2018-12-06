@@ -6,6 +6,9 @@ class SongsController < ApplicationController
   end
 
   def show
+    @playlists_song = PlaylistsSong.new
+    @songs_for_activity = SongsForActivity.new
+    @recommend = Recommend.new
     @song = Song.find(params.fetch("id_to_display"))
 
     render("song_templates/show.html.erb")

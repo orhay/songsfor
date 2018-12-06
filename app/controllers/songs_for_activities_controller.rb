@@ -32,6 +32,36 @@ class SongsForActivitiesController < ApplicationController
     end
   end
 
+  def create_row_from_song
+    @songs_for_activity = SongsForActivity.new
+
+    @songs_for_activity.song_id = params.fetch("song_id")
+    @songs_for_activity.activity_id = params.fetch("activity_id")
+
+    if @songs_for_activity.valid?
+      @songs_for_activity.save
+
+      redirect_to("/songs/#{@songs_for_activity.song_id}", notice: "SongsForActivity created successfully.")
+    else
+      render("songs_for_activity_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_activity
+    @songs_for_activity = SongsForActivity.new
+
+    @songs_for_activity.song_id = params.fetch("song_id")
+    @songs_for_activity.activity_id = params.fetch("activity_id")
+
+    if @songs_for_activity.valid?
+      @songs_for_activity.save
+
+      redirect_to("/activities/#{@songs_for_activity.activity_id}", notice: "SongsForActivity created successfully.")
+    else
+      render("songs_for_activity_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @songs_for_activity = SongsForActivity.find(params.fetch("prefill_with_id"))
 

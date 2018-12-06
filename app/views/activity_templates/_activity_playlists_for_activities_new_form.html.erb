@@ -1,0 +1,25 @@
+<!-- Form playlists_for_activity start -->
+<form action="/create_playlists_for_activity_from_activity" method="post">
+<!-- Form playlists_for_activity end -->
+
+  <!-- Label and input for activity_id start -->
+  <!-- Input for activity_id start -->
+  <input type="hidden" name="activity_id" value="<%= @activity.id %>">
+  <!-- Input for activity_id end -->
+
+  <!-- Label and input for playlist_id start -->
+  <div class="form-group">
+    <label for="playlist_id">
+      Playlist
+    </label>
+
+    <!-- Input for playlist_id start -->
+    <input type="text" id="playlist_id" name="playlist_id" class="form-control" value="<%= @playlists_for_activity.playlist_id %>">
+    <!-- Input for playlist_id end -->
+  </div>
+  <!-- Label and input for playlist_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create playlists for activity
+  </button>
+</form>

@@ -6,6 +6,9 @@ class ActivitiesController < ApplicationController
   end
 
   def show
+    @playlists_for_activity = PlaylistsForActivity.new
+    @songs_for_activity = SongsForActivity.new
+    @recommend = Recommend.new
     @activity = Activity.find(params.fetch("id_to_display"))
 
     render("activity_templates/show.html.erb")
