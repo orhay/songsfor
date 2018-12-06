@@ -1,0 +1,91 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Playlist #<%= @playlist.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/playlists" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link playlist start -->
+      <div class="col">
+        <a href="/playlists/<%= @playlist.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit playlist
+        </a>
+      </div>
+      <!-- Edit link playlist end -->
+
+      <!-- Delete link playlist start -->
+      <div class="col">
+        <a href="/delete_playlist/<%= @playlist.id %>" class="btn btn-block btn-outline-secondary">
+          Delete playlist
+        </a>
+      </div>
+      <!-- Delete link playlist end -->
+    </div>
+
+    <dl>
+      <dt>
+        Description
+      </dt>
+      <!-- Display description start -->
+      <dd>
+        <%= @playlist.description %>
+      </dd>
+      <!-- Display description end -->
+
+      <dt>
+        User
+      </dt>
+      <!-- Display user_id start -->
+      <dd>
+        <%= @playlist.user_id %>
+      </dd>
+      <!-- Display user_id end -->
+
+      <dt>
+        Playlist name
+      </dt>
+      <!-- Display playlist_name start -->
+      <dd>
+        <%= @playlist.playlist_name %>
+      </dd>
+      <!-- Display playlist_name end -->
+
+      <dt>
+        Spotify playlist
+      </dt>
+      <!-- Display spotify_playlist_id start -->
+      <dd>
+        <%= @playlist.spotify_playlist_id %>
+      </dd>
+      <!-- Display spotify_playlist_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@playlist.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@playlist.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
