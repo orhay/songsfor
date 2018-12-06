@@ -14,6 +14,8 @@ RSpec.describe Playlist, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_many(:songs) }
+
     it { should have_many(:activities) }
 
     end
