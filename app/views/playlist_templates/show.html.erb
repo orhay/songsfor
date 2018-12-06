@@ -13,17 +13,21 @@
 
       <!-- Edit link playlist start -->
       <div class="col">
-        <a href="/playlists/<%= @playlist.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit playlist
-        </a>
+        <% if current_user == @playlist.user %>
+          <a href="/playlists/<%= @playlist.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit playlist
+          </a>
+        <% end %>
       </div>
       <!-- Edit link playlist end -->
 
       <!-- Delete link playlist start -->
       <div class="col">
-        <a href="/delete_playlist/<%= @playlist.id %>" class="btn btn-block btn-outline-secondary">
-          Delete playlist
-        </a>
+        <% if current_user == @playlist.user %>
+          <a href="/delete_playlist/<%= @playlist.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete playlist
+          </a>
+        <% end %>
       </div>
       <!-- Delete link playlist end -->
     </div>
