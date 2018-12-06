@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :recommends
+
   has_many   :playlists,
              :dependent => :nullify
 
