@@ -4,6 +4,8 @@ RSpec.describe Recommend, type: :model do
   
     describe "Direct Associations" do
 
+    it { should belong_to(:song) }
+
     it { should belong_to(:user) }
 
     end
