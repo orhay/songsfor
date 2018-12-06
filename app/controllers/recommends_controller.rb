@@ -10,7 +10,8 @@ class RecommendsController < ApplicationController
   end
 
   def index
-    @recommends = Recommend.page(params[:page]).per(10)
+    @q = Recommend.ransack(params[:q])
+    @recommends = @q.result(:distinct => true).includes(:user, :song, :activity).page(params[:page]).per(10)
 
     render("recommend_templates/index.html.erb")
   end

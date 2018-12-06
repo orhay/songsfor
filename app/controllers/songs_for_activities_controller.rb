@@ -1,6 +1,7 @@
 class SongsForActivitiesController < ApplicationController
   def index
-    @songs_for_activities = SongsForActivity.page(params[:page]).per(10)
+    @q = SongsForActivity.ransack(params[:q])
+    @songs_for_activities = @q.result(:distinct => true).includes(:song, :activity).page(params[:page]).per(10)
 
     render("songs_for_activity_templates/index.html.erb")
   end
