@@ -9,6 +9,10 @@ class Song < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :activities,
+             :through => :songs_for_activities,
+             :source => :activity
+
   # Validations
 
 end

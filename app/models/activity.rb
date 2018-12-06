@@ -9,6 +9,10 @@ class Activity < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :songs,
+             :through => :songs_for_activities,
+             :source => :song
+
   has_many   :playlists,
              :through => :playlists_for_activities,
              :source => :playlist
