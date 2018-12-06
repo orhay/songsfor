@@ -1,6 +1,6 @@
 class SongsForActivitiesController < ApplicationController
   def index
-    @songs_for_activities = SongsForActivity.all
+    @songs_for_activities = SongsForActivity.page(params[:page]).per(10)
 
     render("songs_for_activity_templates/index.html.erb")
   end
