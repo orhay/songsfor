@@ -46,7 +46,7 @@ class PlaylistsController < ApplicationController
     @playlist = Playlist.find(params.fetch("id_to_modify"))
 
     @playlist.description = params.fetch("description")
-    @playlist.user_id = params.fetch("user_id")
+    
     @playlist.playlist_name = params.fetch("playlist_name")
     @playlist.spotify_playlist_id = params.fetch("spotify_playlist_id")
 
