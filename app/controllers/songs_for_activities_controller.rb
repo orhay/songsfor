@@ -53,6 +53,22 @@ class SongsForActivitiesController < ApplicationController
     end
   end
 
+  def destroy_row_from_song
+    @songs_for_activity = SongsForActivity.find(params.fetch("id_to_remove"))
+
+    @songs_for_activity.destroy
+
+    redirect_to("/songs/#{@songs_for_activity.song_id}", notice: "SongsForActivity deleted successfully.")
+  end
+
+  def destroy_row_from_activity
+    @songs_for_activity = SongsForActivity.find(params.fetch("id_to_remove"))
+
+    @songs_for_activity.destroy
+
+    redirect_to("/activities/#{@songs_for_activity.activity_id}", notice: "SongsForActivity deleted successfully.")
+  end
+
   def destroy_row
     @songs_for_activity = SongsForActivity.find(params.fetch("id_to_remove"))
 

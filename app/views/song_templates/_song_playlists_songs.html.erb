@@ -1,0 +1,37 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Playlists Songs
+
+    <a data-toggle="collapse" href="#song_playlists_songs_new_form">
+      Add playlists song
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @song.playlists_songs.each do |playlists_song| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/playlists_songs/<%= playlists_song.id %>">
+          <%= playlists_song.song_id %>
+        </a>
+        <!-- Show link end -->
+
+        <!-- Delete link start -->
+        <a href="/delete_playlists_song_from_song/<%= playlists_song.id %>">
+          Delete
+        </a>
+        <!-- Delete link end -->
+
+      </li>
+    <% end %>
+
+    <div class="card-footer">
+      <div class="collapse" id="song_playlists_songs_new_form">
+        <!-- New associationcollection form start -->
+
+        <!-- New associationcollection form end -->
+      </div>
+    </div>
+
+  </ul>
+</div>

@@ -57,6 +57,14 @@ class PlaylistsController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @playlist = Playlist.find(params.fetch("id_to_remove"))
+
+    @playlist.destroy
+
+    redirect_to("/users/#{@playlist.user_id}", notice: "Playlist deleted successfully.")
+  end
+
   def destroy_row
     @playlist = Playlist.find(params.fetch("id_to_remove"))
 

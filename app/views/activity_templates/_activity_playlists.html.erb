@@ -1,0 +1,19 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Playlists
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @activity.playlists.each do |playlist| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/playlists/<%= playlist.id %>">
+          <%= playlist.playlist_name %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

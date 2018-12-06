@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Playlists
+
+    <a data-toggle="collapse" href="#user_playlists_new_form">
+      Add playlist
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.playlists.each do |playlist| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/playlists/<%= playlist.id %>">
+          <%= playlist.playlist_name %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

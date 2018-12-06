@@ -55,6 +55,30 @@ class RecommendsController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @recommend = Recommend.find(params.fetch("id_to_remove"))
+
+    @recommend.destroy
+
+    redirect_to("/users/#{@recommend.user_id}", notice: "Recommend deleted successfully.")
+  end
+
+  def destroy_row_from_song
+    @recommend = Recommend.find(params.fetch("id_to_remove"))
+
+    @recommend.destroy
+
+    redirect_to("/songs/#{@recommend.song_id}", notice: "Recommend deleted successfully.")
+  end
+
+  def destroy_row_from_activity
+    @recommend = Recommend.find(params.fetch("id_to_remove"))
+
+    @recommend.destroy
+
+    redirect_to("/activities/#{@recommend.activity_id}", notice: "Recommend deleted successfully.")
+  end
+
   def destroy_row
     @recommend = Recommend.find(params.fetch("id_to_remove"))
 

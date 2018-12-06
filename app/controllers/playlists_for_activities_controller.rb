@@ -53,6 +53,22 @@ class PlaylistsForActivitiesController < ApplicationController
     end
   end
 
+  def destroy_row_from_playlist
+    @playlists_for_activity = PlaylistsForActivity.find(params.fetch("id_to_remove"))
+
+    @playlists_for_activity.destroy
+
+    redirect_to("/playlists/#{@playlists_for_activity.playlist_id}", notice: "PlaylistsForActivity deleted successfully.")
+  end
+
+  def destroy_row_from_activity
+    @playlists_for_activity = PlaylistsForActivity.find(params.fetch("id_to_remove"))
+
+    @playlists_for_activity.destroy
+
+    redirect_to("/activities/#{@playlists_for_activity.activity_id}", notice: "PlaylistsForActivity deleted successfully.")
+  end
+
   def destroy_row
     @playlists_for_activity = PlaylistsForActivity.find(params.fetch("id_to_remove"))
 

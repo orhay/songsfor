@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_playlists_song/:id_to_remove", { :controller => "playlists_songs", :action => "destroy_row" })
+  get("/delete_playlists_song_from_song/:id_to_remove", { :controller => "playlists_songs", :action => "destroy_row_from_song" })
+  get("/delete_playlists_song_from_playlist/:id_to_remove", { :controller => "playlists_songs", :action => "destroy_row_from_playlist" })
 
   #------------------------------
 
@@ -37,6 +39,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_playlists_for_activity/:id_to_remove", { :controller => "playlists_for_activities", :action => "destroy_row" })
+  get("/delete_playlists_for_activity_from_activity/:id_to_remove", { :controller => "playlists_for_activities", :action => "destroy_row_from_activity" })
+  get("/delete_playlists_for_activity_from_playlist/:id_to_remove", { :controller => "playlists_for_activities", :action => "destroy_row_from_playlist" })
 
   #------------------------------
 
@@ -56,6 +60,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_songs_for_activity/:id_to_remove", { :controller => "songs_for_activities", :action => "destroy_row" })
+  get("/delete_songs_for_activity_from_activity/:id_to_remove", { :controller => "songs_for_activities", :action => "destroy_row_from_activity" })
+  get("/delete_songs_for_activity_from_song/:id_to_remove", { :controller => "songs_for_activities", :action => "destroy_row_from_song" })
 
   #------------------------------
 
@@ -75,6 +81,9 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_recommend/:id_to_remove", { :controller => "recommends", :action => "destroy_row" })
+  get("/delete_recommend_from_activity/:id_to_remove", { :controller => "recommends", :action => "destroy_row_from_activity" })
+  get("/delete_recommend_from_song/:id_to_remove", { :controller => "recommends", :action => "destroy_row_from_song" })
+  get("/delete_recommend_from_user/:id_to_remove", { :controller => "recommends", :action => "destroy_row_from_user" })
 
   #------------------------------
 
@@ -132,6 +141,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_playlist/:id_to_remove", { :controller => "playlists", :action => "destroy_row" })
+  get("/delete_playlist_from_user/:id_to_remove", { :controller => "playlists", :action => "destroy_row_from_user" })
 
   #------------------------------
 
