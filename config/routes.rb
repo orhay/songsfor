@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "playlists#index"
   # Routes for the Playlists song resource:
 
   # CREATE
